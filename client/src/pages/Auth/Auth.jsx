@@ -11,7 +11,7 @@ const Auth = () => {
   return (
     <section class='auth-section'>
         { isSignUp && <AboutAuth/>}
-        <div classs='auth-container-2'>
+        <div class='auth-container-2'>
             {!isSignUp &&<img src={icon} alt='stack overflow' className='login-logo'/> }
             <form >
                 {
@@ -23,7 +23,7 @@ const Auth = () => {
                          </label>
                     )
                 }
-                <label htmlFor="">
+                <label htmlFor='email'>
                     <h4>Email</h4>
                     <input type="email" name='email' id='email' />
                     <div style={{display: 'flex', justifyContent: 'space-between' }}>
@@ -42,7 +42,7 @@ const Auth = () => {
                         </label>
                     )
                 }
-                <button type='submit' classnName='auth-button'>{isSignUp ? 'Sign up':' Log in '} </button>
+                <button type='submit' className='auth-btn'>{isSignUp ? 'Sign up':' Log in '} </button>
                 {
                     isSignUp && (
                         <p style={{color:"#666767", fontSize:"13px"}}>By clicking "Sign Up", you agree to our <span style={{color: "#007ac6"}}>terms of <br /> service</span> our  <span style={{color: "#007ac6"}}>privacy policy</span> and <span style={{color: "#007ac6"}}>cookie policy</span></p>
