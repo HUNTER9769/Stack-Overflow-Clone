@@ -1,15 +1,24 @@
-import React from 'react'
+import React, {useEffect} from 'react'
 import { Link} from 'react-router-dom';
+import { useSelector, useDispatch } from 'react-redux'
+
 import logo from '../../assets/logo.png'
 import search from '../../assets/magnifying-glass-solid.svg'
 import Avatar from '../../components/Avatar/Avatar'
-import Button from '../../components/Button/Button'
+// import Button from '../../components/Button/Button'
 import './Navbar.css'
-import Auth from '../../pages/Auth/Auth'
+// import Auth from '../../pages/Auth/Auth'
+import { setCurrentUser } from '../../actions/currentUser'
 
 
 const Navbar = () => {
-  var User = null;
+  const dispatch = useDispatch()
+  var User = useSelector((state) => (state.currentUserReducer))
+
+  useEffect(() => {
+      dispatch(setCurrentUser(JSON.parse(localStorage.getItem('Profile')) ))
+  }, [dispatch])
+
   return (
     <nav className='main-nav'>
         <div className='navbar'>
