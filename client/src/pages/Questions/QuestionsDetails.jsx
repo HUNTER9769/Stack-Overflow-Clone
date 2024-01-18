@@ -9,7 +9,7 @@ import downVotepng from '../../assets/icons8-down-arrow-20.png'
 import './Questions.css'
 import Avatar from '../../components/Avatar/Avatar'
 import DisplayAnswer from './DisplayAnswer'
-import {postAnswer} from '../../actions/question'
+import {postAnswer, deleteQuestion} from '../../actions/question'
 
 const QuestionsDetails = () => {
 
@@ -83,7 +83,7 @@ const QuestionsDetails = () => {
     const location = useLocation()
     const url = 'http://localhost:3000' 
 
-    const handlePosAns = (e, answerLength) => {
+    const handlePostAns = (e, answerLength) => {
         e.preventDefault()
         if(User === null) {
             alert('Login or Signup to answer a question.')
@@ -92,7 +92,7 @@ const QuestionsDetails = () => {
             if ( Answer === '' ) {  
                 alert('Enter an answer before submitting.')
             }else {
-                dispatch(postAnswer({ id, noOfAnswers: answerLength + 1 , answerBody: Answer, userAnswered: User.result.name}))
+                dispatch(postAnswer({ id, noOfAnswers: answerLength + 1 , answerBody: Answer, userAnswered: User.result.name, userId: User?.result?._id }))
             }
         }
     }
@@ -102,6 +102,9 @@ const QuestionsDetails = () => {
         alert('Copied url: '+url+location.pathname)
     } 
 
+    const handleDelete = () => {
+        dispatch(deleteQuestion(id, navigate))
+    }
 
   return (
     <div className='question-details-page'>
@@ -133,7 +136,11 @@ const QuestionsDetails = () => {
                                         <div className="question-actions-user">
                                             <div>
                                                 <button type='button' onClick={handleShare}> Share</button>
-                                                <button type='button'>Delete</button>
+                                                {
+                                                    User?.result?._id === question?.userId && (
+                                                        <button type='button' onClick={handleDelete}>Delete</button>
+                                                        )
+                                                }
                                             </div>
                                             <div>
                                                 <p>asked {moment(question.askedOn).fromNow()}</p>
@@ -160,7 +167,7 @@ const QuestionsDetails = () => {
                             }
                             <section className='post-ans-container'>
                                 <h3 > Your Answer</h3>
-                                <form onSubmit={(e) => { handlePosAns(e, question.answer.length) }}>
+                                <form onSubmit={(e) => { handlePostAns(e, question.answer.length) }}>
                                     <textarea name="" id="" cols="30" rows="10" onChange={e => setAnswer(e.target.value)}></textarea><br />
                                     <input type="Submit" className='post-ans-btn' value='Post Your Answer' />
 

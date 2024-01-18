@@ -77,7 +77,7 @@ const HomeMainbar = () => {
         questionsList.data === null ? 
           <h1>Loading ... </h1> : 
           <>
-            <p>{questionsList.data.length} questions</p>
+           <p>{questionsList.data.length} questions</p>
             <QuestionList questionsList = {questionsList.data}/>
           </>
         }
