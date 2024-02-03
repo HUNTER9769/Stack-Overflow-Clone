@@ -18,6 +18,7 @@ const UserProfile = () => {
     const currentProfile = users.filter((users) => users._id === id )[0]
     const currentUser = useSelector((state) => state.currentUserReducer)
     // console.log(currentUser)
+    // console.log(currentProfile)
 
     const [Switch, setSwitch] = useState(false)
 

@@ -85,5 +85,6 @@
     color: #0a95ff;
     background-color: transparent;
     border: none;
-    margin-right: 10px;
+    margin-left: 10px;
+    cursor: pointer;
 }
