@@ -19,7 +19,7 @@ const LeftSidebar = () => {
                     <NavLink to='/Tags' className="side-nav-links" activeClassname="active" style={{paddingLeft:'40px'}}>
                         <p>Tags</p>
                     </NavLink>
-                    <NavLink to='/Tags' className="side-nav-links" activeClassname="active" style={{paddingLeft:'40px'}}> 
+                    <NavLink to='/Users' className="side-nav-links" activeClassname="active" style={{paddingLeft:'40px'}}> 
                         <p>Users</p>
                     </NavLink>
             </div>
