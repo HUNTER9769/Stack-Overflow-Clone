@@ -7,6 +7,7 @@ import { useEffect } from 'react';
 import { fetchAllQuestions } from './actions/question';
 import { useDispatch } from 'react-redux';
 import { fetchAllUsers } from './actions/users';
+import User from './pages/Users/User';
 
 
 function App() {

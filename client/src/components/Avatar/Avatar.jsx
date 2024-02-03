@@ -8,7 +8,8 @@ const Avatar = ({children, cursor, backgroundColor, px, py , color, borderRadius
     borderRadius,
     fontSize,
     textAlign: "center",
-    cursor: cursor || null
+    cursor: cursor || null,
+    textDecoration: "none"
   }
   return (
     <div style={style}>
