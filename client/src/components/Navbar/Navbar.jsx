@@ -1,4 +1,4 @@
-import React, {useEffect} from 'react'
+import React, {useEffect, useState} from 'react'
 import { Link, useNavigate} from 'react-router-dom';
 import { useSelector, useDispatch} from 'react-redux'
 import {jwtDecode} from 'jwt-decode'
@@ -6,13 +6,16 @@ import {jwtDecode} from 'jwt-decode'
 import logo from '../../assets/logo.png'
 import search from '../../assets/magnifying-glass-solid.svg'
 import Avatar from '../../components/Avatar/Avatar'
+import ColorToggleButton from '../ThemeToggle/ThemeToggle';
 // import Button from '../../components/Button/Button'
 import './Navbar.css'
 // import Auth from '../../pages/Auth/Auth'
 import { setCurrentUser } from '../../actions/currentUser'
 
 
-const Navbar = () => {
+
+
+const Navbar = (props) => {
   const dispatch = useDispatch()
   const navigate = useNavigate()
   var User = useSelector((state) => (state.currentUserReducer))
@@ -40,9 +43,9 @@ const Navbar = () => {
             <Link to='/' className='nav-item nav-btn'> 
                 <img src={logo} alt="logo" />
             </Link>
-            <Link to='/' className='nav-item nav-btn'>About</Link>
-            <Link to='/' className='nav-item nav-btn'>Products</Link>
-            <Link to='/' className='nav-item nav-btn'>For Teams</Link>
+            <Link to='/' className='nav-item nav-btn dark-theme'>About</Link>
+            <Link to='/' className='nav-item nav-btn dark-theme'>Products</Link>
+            <Link to='/' className='nav-item nav-btn dark-theme'>For Teams</Link>
             
             <form>
                 <input type="text" placeholder='Search...' />
@@ -56,7 +59,8 @@ const Navbar = () => {
                 <button className='nav-item nav-links'onClick={handleLogout}>Log out</button>
               </>            
             
-          }
+            }
+            <ColorToggleButton data = {props.data } hour_now = {props.hour_now}/>
             
 
         </div>

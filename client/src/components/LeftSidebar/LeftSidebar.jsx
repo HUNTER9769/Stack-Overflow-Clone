@@ -8,20 +8,21 @@ const LeftSidebar = () => {
     <div className='left-sidebar'>
         <nav className='side-nav'>
             <NavLink to='/'  className="side-nav-links" activeClassname="active" /*style={{ paddingLeft: '40px'}}*/>
-                <p>Home</p>
+                <p className='dark-theme'>Home</p>
             </NavLink>
             <div className='side-nav-div'>
-                    <div><p>PUBLIC</p></div>
+                    <div><p className='dark-theme'>PUBLIC</p></div>
                     <NavLink to='/Questions' className="side-nav-links" activeClassname="active">
                         <img src={Globe} alt="Globe" />
-                        <p style={{paddingLeft:'10px'}}>Questions</p>
+                        <p style={{paddingLeft:'10px'}} className='dark-theme'>Questions</p>
                     </NavLink>
                     <NavLink to='/Tags' className="side-nav-links" activeClassname="active" style={{paddingLeft:'40px'}}>
-                        <p>Tags</p>
+                        <p className='dark-theme'>Tags</p>
                     </NavLink>
                     <NavLink to='/Users' className="side-nav-links" activeClassname="active" style={{paddingLeft:'40px'}}> 
-                        <p>Users</p>
+                        <p className='dark-theme'>Users</p>
                     </NavLink>
+                   
             </div>
 
         </nav>

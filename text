@@ -64,3 +64,5 @@ Stack Overflow user profile backend and frontend integration
 
 Stack Overflow Deploy your application
 47 m
+
+${process.env.REACT_OPENWEATHER_API_URL}/weather?lat=${lat}&lon=${long}&units=metric&appid=${process.env.REACT_OPENWEATHER_API_KEY}

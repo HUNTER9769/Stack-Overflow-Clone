@@ -1,11 +1,11 @@
 .ask-question {
     min-height: 100vh;
     background-color: #f1f2f3;
-}
+} 
 
 .ask-ques-container {
     margin: auto;
-    max-width: 1200px;
+    max-width: 1200px; 
 }
 
 .ask-ques-container h1 {
@@ -19,7 +19,7 @@
     border-radius: 3px;
     box-shadow: 0 10px 25px rgb(0 0 0 / 5%),
     0 20px 48px rgb(0 0 0 / 5%),
-    0 1px 4px rgb(0 0 0 / 10%);
+    0 1px 4px rgb(0 0 0 / 10%); 
 
 }
 

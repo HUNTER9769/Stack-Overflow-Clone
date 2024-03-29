@@ -55,7 +55,7 @@ const HomeMainbar = () => {
           alert("login or signup to ask question")
           navigate('/Auth')
       }else {
-        navigate('/AskQuestion')
+        navigate('/PaymentPage')
       }
   }
 
@@ -65,7 +65,7 @@ const HomeMainbar = () => {
     <div className='main-bar'>
       <div className='main-bar-header'>
         {
-          location.pathname === '/' ? <h1>Top Questions</h1> : <h1>All Questions</h1>
+          location.pathname === '/' ? <h1 className='dark-theme'>Top Questions</h1> : <h1 className='dark-theme'>All Questions</h1>
         }
         <button to='/AskQuestion' onClick={checkAuth} className='ask-btn'>AskQuestion</button>
 
@@ -75,9 +75,9 @@ const HomeMainbar = () => {
       <div>
         {
         questionsList.data === null ? 
-          <h1>Loading ... </h1> : 
+          <h1 className='dark-theme'>Loading ... </h1> : 
           <>
-           <p>{questionsList.data.length} questions</p>
+           <p className='dark-theme'>{questionsList.data.length} questions</p>
             <QuestionList questionsList = {questionsList.data}/>
           </>
         }

@@ -24,3 +24,6 @@
 
     margin: 50px 0;
 } */
+.active-theme:active {
+    background-color: green;
+}

@@ -6,15 +6,18 @@ import {Provider} from 'react-redux'
 import { createStore, applyMiddleware, compose} from 'redux'
 import {thunk} from 'redux-thunk'
 import Reducers from './reducers'
+// import dotenv from 'dotenv'
+// dotenv.config();
+
 
 const store = createStore( Reducers, compose(applyMiddleware(thunk)))
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <Provider store={store}>
-  <React.StrictMode>
+  {/* <React.StrictMode> */}
     <App />
-  </React.StrictMode>
+  {/* </React.StrictMode> */}
   </Provider>
 
 );
